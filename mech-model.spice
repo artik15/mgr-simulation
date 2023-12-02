@@ -1,0 +1,7 @@
+* mechanical model
+
+.SUBCKT PLATE velocity ref
+C1 velocity ref 0.212
+L1 velocity ref 5.3265e-6
+R1 velocity ref 4.17
+.ENDS
