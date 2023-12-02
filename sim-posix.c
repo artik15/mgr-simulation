@@ -436,5 +436,6 @@ int dac_get_A(void)
 int main(int argc, void **argv)
 {
 	printf("TEST123\n");
+	spice_init();
 	return 0;
 }
