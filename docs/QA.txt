@@ -1,0 +1,37 @@
+
+--1--
+Pyt. Czy aktualne działanie (kilka Inf) jest prawidłowe?
+Odp. 
+
+--2--
+Pyt. Czy logi z stdout się w linuxie gdzieś zapisują?
+Odp.
+
+--3--
+Pyt. Wspominał Pan o tym, że źródło dźwięku wypuszczać też z płytki. Jak to osiągnąć?
+Odp.
+
+--4--
+Pyt. Jeśli chodzi o sterowanie to czym są wartości prz Vin?
+Odp.
+
+--5--
+Pyt. Jakie kroki powinienem zrobić od adc? Filtracja -> dolnoprzepustowy uwzględniający częstotliwość drgań, które chce tłumić?
+Odp. 
+
+--6--
+Pyt. Mierzę napięcie -> w ten sposób razem z alfa mam F_MFC. Dalej obliczyć pochodną żeby prędkość mieć?
+     Czy może mierzę napięcie na rezystorze zwierającym pomiarowy MFC i wtedy mam prąd i z alfą mam prędkość?
+Odp.
+
+--7--
+Pyt. Jak z debugowaniem procka? Da się przez port szeregowy??
+Odp.
+
+--8--
+Pyt.
+Odp.
+
+--2--
+Pyt.
+Odp.
