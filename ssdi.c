@@ -1,6 +1,6 @@
 #include "ssdi.h"
 
-unsigned int ssdiv(double v)
+unsigned int ssdiv(int v)
 {
     return 0.0;
 }

@@ -16,6 +16,6 @@
 #define CONTROL_NEG             0x2
 
 unsigned int ssdim(int v);
-unsigned int ssdiv(double v);
+unsigned int ssdiv(int v);
 
 #endif
