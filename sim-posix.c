@@ -260,10 +260,16 @@ static int senddata_cb(struct vecvaluesall *v, int num, int ident,
 		}
 		u1 = u;
 
-#if 1
+#if 0
 		vin = 65536.0 / 3.3 * (vref - 1.65);
 		vin += round(0.9 * rand_gauss());
 		u = ssdiv(vin);
+		if (time < 1)
+			u = 0;
+#elif 1
+		vin = 65536.0 / 3.3 * (vref - 1.65);
+		vin += round(0.9 * rand_gauss());
+		u = ssdi_simple(vin);
 		if (time < 1)
 			u = 0;
 #else
@@ -440,7 +446,6 @@ int dac_get_A(void)
 
 int main(int argc, void **argv)
 {
-	printf("TEST123\n");
 	spice_init();
 	return 0;
 }

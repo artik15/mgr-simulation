@@ -29,8 +29,8 @@ class Plotter():
                 self.time.append(float(word[1]))
                 self.velocity.append(float(word[2]))
                 self.vmfc.append(float(word[3]))
-                self.pos.append(float(word[4]))
-                self.neg.append(float(word[5]))
+                self.pos.append(float(word[9]))
+                self.neg.append(float(word[10]))
                 
         self.l: int = len(self.time)
 
@@ -82,15 +82,18 @@ class Plotter():
     #     plt.grid(True)
     #     plt.show()   
 
+def find(name, path):
+    for root, dirs, files in os.walk(path):
+        if name in files:
+            return os.path.join(root, name)
 
 def main():
     if len(sys.argv) < 2:
         return
     
-    # bin_file = sys.argv[1]
-    # if not os.path.isfile(bin_file):
-    #     return
-    bin_file = "./sim.txt"    
+    filename = sys.argv[1]
+    bin_file = find(filename, os. getcwd())
+    bin_file = "./sim3.txt"    
     plotter = Plotter()
     plotter.get_data(bin_file)
     plotter.plot()

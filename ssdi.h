@@ -17,5 +17,7 @@
 
 unsigned int ssdim(int v);
 unsigned int ssdiv(int v);
+unsigned int ssdi_simple(int v);
+
 
 #endif
