@@ -93,7 +93,7 @@ def main():
     
     filename = sys.argv[1]
     bin_file = find(filename, os. getcwd())
-    bin_file = "./sim3.txt"    
+    # bin_file = "./sim3.txt"    
     plotter = Plotter()
     plotter.get_data(bin_file)
     plotter.plot()
