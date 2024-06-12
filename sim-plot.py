@@ -16,6 +16,8 @@ class Plotter():
         self.vmfc = []
         self.pos = []
         self.neg = []
+        self.vref = []
+        self.vin = []
 
     def get_data(self, file):
         if not os.path.isfile(file):
@@ -31,6 +33,8 @@ class Plotter():
                 self.vmfc.append(float(word[3]))
                 self.pos.append(float(word[9]))
                 self.neg.append(float(word[10]))
+                self.vref.append(float(word[11])*3-5)
+                self.vin.append(float(word[8]))
                 
         self.l: int = len(self.time)
 
@@ -48,10 +52,19 @@ class Plotter():
         axis[0].set_title("Velocity")
         axis[1].plot(self.time, self.vmfc)
         axis[1].set_title("VMFC")
-        axis[2].plot(self.time, self.pos)
-        axis[2].set_title("POS")
-        axis[3].plot(self.time, self.neg)
-        axis[3].set_title("NEG")
+        axis[1].plot(self.time, self.vref)
+        axis[2].set_title("vref")
+        axis[3].plot(self.time, self.vin)
+        axis[3].set_title("vin")
+        plt.grid(True)
+        plt.show()
+        figure1, axis1 = plt.subplots(1, 1)
+        axis1.plot(self.time, self.vmfc, label="Vmfc")
+        axis1.plot(self.time, self.vref, label="Vref")
+        axis1.set_title("VMFC")
+        axis1.set_xlabel("Czas [s]")
+        axis1.set_ylabel("Napięcie [V]")
+        axis1.legend(loc="upper right")
         plt.grid(True)
         plt.show()
 

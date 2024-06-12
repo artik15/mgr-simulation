@@ -262,12 +262,12 @@ static int senddata_cb(struct vecvaluesall *v, int num, int ident,
 
 #if 0
 		vin = 65536.0 / 3.3 * (vref - 1.65);
-		vin += round(0.9 * rand_gauss());
+		vin += round(20 * rand_gauss());
 		u = ssdiv(vin);
 		if (time < 1)
 			u = 0;
 #elif 1
-		vin = 65536.0 / 3.3 * (vref - 1.65);
+		vin = 65536.0 / 3.3 * (vout - 1.65);
 		vin += round(0.9 * rand_gauss());
 		u = ssdi_simple(vin);
 		if (time < 1)
@@ -340,14 +340,13 @@ static void spice_init(void)
 		"X15 velocity 0 VMFC6 VMFC5 MFC",
 		"X16 velocity 0 VMFC7 VMFC6 MFC",
 		"X17 velocity 0 VMFC8 VMFC7 MFC",
-		"X18 velocity 0 VMFC9 VMFC8 MFC",
-		"X19 velocity 0 VREF_MFC 0 MFC",
+		"X18 velocity 0 VREF_MFC 0 MFC",
+		"X19 velocity2 0 VREC 0 MFC",
 		"X20 velocity2 0 VREC 0 MFC",
 		"X21 velocity2 0 VREC 0 MFC",
 		"X22 velocity2 0 VREC 0 MFC",
-		"X23 velocity2 0 VREC 0 MFC",
-		"v24 VMFC9 VMFCX dc 0",
-		"X25 VMFCX VMFC COIL",
+		"v20 VMFC8 VMFCX dc 0",
+		"X23 VMFCX VMFC COIL",
 		out_sw,
 //		"X30 VMFC POS NEG V_PLUS V_MINUS V33 VP VN 0 OUTSW",
 		"X31 VMFC VOUT V33 VOFFSET VP VN 0 A_IN",
