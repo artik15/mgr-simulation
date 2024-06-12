@@ -104,13 +104,10 @@ unsigned int ssdiv(int v)
 }
 
 
-
-#include "ssdi.h"
-
 #define V_MID 30
-#define DEAD_ZONE 15
+#define DEAD_ZONE 25
 #define ZERO_COUNTER 3
-#define SWITCH_PERIOD 40
+#define SWITCH_PERIOD 70
 #define POST_SWITCH_PERIOD 50
 
 enum SSDI_STATE {
@@ -132,7 +129,7 @@ struct ssdi_var
 };
 
 
-unsigned int switch_period = 40;
+unsigned int switch_period = SWITCH_PERIOD;
 
 unsigned int ssdi_simple(int v)
 {
@@ -141,7 +138,6 @@ unsigned int ssdi_simple(int v)
     static struct ssdi_var object = {0};
     unsigned int u = 0;
     // static unsigned int ctr = 0;
-
     switch (object.state)
     {
     case SSDI_INIT:
